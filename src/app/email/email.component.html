@@ -1,0 +1,25 @@
+<form [formGroup]="formModel">
+  <div class="email">
+    <input type="text" placeholder="Email" formControlName="email"
+           [class.invalid]="!formModel.get('email').valid && formModel.get('email').touched"
+           (focus)="errorIconHide=true"
+           (focusout)="errorIconHide=false"/>
+   <!-- when email is invalid and input is not focused, error icon shows.
+   When mouse is over error icon, the related error message will show -->
+    <div [hidden]="formModel.get('email').valid || formModel.get('email').untouched || errorIconHide">
+      <span class="icon-notification error-icon error-icon-email"
+            (mouseover)="showErrorMessage(formModel.hasError('required','email'), formModel.hasError('mismatch','email'))"
+            (mouseleave)="hideErrorMessage()"></span>
+    </div>
+  </div>
+</form>
+
+<!-- error message -->
+<div class="message-error" [hidden]="requiredError">
+  <div class="triangle"></div>
+  You will use it when you log in.
+</div>
+<div class="message-error" [hidden]="mismatchError">
+  <div class="triangle"></div>
+  Please enter a valid email address, like: xxx@xxx.xxx
+</div>

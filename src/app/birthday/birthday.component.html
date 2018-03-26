@@ -1,0 +1,26 @@
+<form [formGroup]="formModel">
+  <div class="birthday">
+    <label for="birthday" id="birthday">Birthday: </label>
+    <input id="birthday" type="date" placeholder="YYYY-MM-DD" formControlName="birthday"
+           [class.invalid]="!formModel.get('birthday').valid && formModel.get('birthday').touched"
+           (focus)="errorIconHide=true"
+           (focusout)="errorIconHide=false"/>
+    <!-- when birthday is invalid and input is not focused, error icon shows.
+    When mouse is over error icon, the related error message will show -->
+    <div [hidden]="formModel.get('birthday').valid || formModel.get('birthday').untouched || errorIconHide">
+     <span class="icon-notification error-icon error-icon-birthday"
+           (mouseover)="showErrorMessage(formModel.hasError('required','birthday'), formModel.hasError('mismatch','birthday'))"
+           (mouseleave)="hideErrorMessage()"></span>
+    </div>
+  </div>
+</form>
+
+<!-- error message -->
+<div class="message-error message-error-birthday" [hidden]="requiredError">
+  <div class="triangle"></div>
+  What's your birthday?
+</div>
+<div class="message-error message-error-birthday" [hidden]="mismatchError">
+  <div class="triangle"></div>
+  Please enter your real birthday.
+</div>

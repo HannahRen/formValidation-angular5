@@ -1,0 +1,25 @@
+<form [formGroup]="formModel">
+  <div class="region">
+    <label for="region">Region: </label>
+    <select id="region" formControlName="region" value="-1"
+            [class.invalid]="!formModel.get('region').valid && formModel.get('region').touched"
+            (focus)="errorIconHide=true"
+            (focusout)="errorIconHide=false">
+      <option value="" selected disabled>-- Select your region --</option>
+      <option *ngFor="let region of regions" [value]="region">{{region}}</option>
+    </select>
+    <!-- when region is invalid and input is not focused, error icon shows.
+    When mouse is over error icon, the related error message will show -->
+    <div [hidden]="formModel.get('region').valid || formModel.get('region').untouched || errorIconHide">
+      <span class="icon-notification error-icon error-icon-region"
+            (mouseover)="errorMessage=false"
+            (mouseleave)="errorMessage=true"></span>
+    </div>
+  </div>
+</form>
+
+<!-- error message -->
+<div class="message-error message-error-region" [hidden]="errorMessage">
+  <div class="triangle"></div>
+  What's your region?
+</div>

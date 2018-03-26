@@ -1,0 +1,8 @@
+{
+  "/countries": {
+    "target": "https://api.printful.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+   }
+}

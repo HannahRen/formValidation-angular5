@@ -1,0 +1,13 @@
+<div class="form-wrapper">
+  <form [formGroup]="formModel" (submit)="onSubmit()" novalidate>
+    <app-fullname [formModel]="formModel"></app-fullname>
+    <app-email [formModel]="formModel"></app-email>
+    <app-birthday [formModel]="formModel"></app-birthday>
+    <app-region [formModel]="formModel"></app-region>
+    <app-gender [formModel]="formModel"></app-gender>
+    <app-password [formModel]="formModel"></app-password>
+    <div class="button-wrapper">
+      <button type="submit" class="button-submit">Create Account</button>
+    </div>
+  </form>
+</div>

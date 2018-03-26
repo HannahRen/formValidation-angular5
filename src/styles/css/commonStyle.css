@@ -1,0 +1,95 @@
+/* button styles */
+button {
+  outline: 0;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* button[type=submit] styles */
+.button-submit {
+  color: #ffffff;
+  background-color: rgba(85, 186, 163, 0.6);
+  font-size: 18px;
+}
+.button-submit:hover {
+  box-shadow: 0 0 5px 3px rgba(85, 186, 163, 0.6);
+}
+.button-submit:active {
+  background-color: rgba(85, 186, 163, 0.8);
+}
+/* input and select styles */
+input, select {
+  outline: 0;
+  border: 2px solid #e6e6e6;
+  border-radius:5px;
+  box-sizing: border-box;
+  margin: 8px 0;
+  padding: 5px;
+  font-size: 16px;
+  color: #4d4d4d;
+  cursor: pointer;
+  width: 100%;
+  height: 32px;
+}
+input:focus, select:focus{
+  border: 2px solid rgba(85, 186, 163, 0.6);
+}
+input:hover, select:hover{
+  box-shadow: 0 0 5px 3px #e6e6e6;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  margin-right: 15px;
+}
+input[type="radio"] {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  position: absolute;
+}
+input[type="radio"]+label:before {
+	height:15px;
+	width:15px;
+  box-sizing: border-box;
+  border: 2px solid #e6e6e6;
+  border-radius: 50%;
+  content: " ";
+  display:inline-block;
+  vertical-align: middle;
+}
+input[type="radio"]:hover+label:before {
+  box-shadow: 0 0 5px 3px #e6e6e6;
+}
+input[type="radio"]:checked + label:before{
+  border: 5px solid rgba(85, 186, 163, 0.6);
+}
+/* icon-notification styles */
+.error-icon {
+  position: absolute;
+  color: rgb(175, 47, 47);
+  cursor: pointer;
+}
+/* error message styles */
+.message-error {
+  position: absolute;
+  font-size: 12px;
+  background-color: rgb(175, 47, 47);
+  color: #ffffff;
+  z-index: 10;
+  border-radius: 10px;
+  padding: 5px 8px;
+}
+.message-error .triangle {
+  position: absolute;
+  top: 0px;
+  left: 5%;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(175, 47, 47);
+  transform:rotateZ(45deg);
+  z-index: -1;
+}
+
+.invalid {
+  border: 2px solid rgb(175, 47, 47);
+}

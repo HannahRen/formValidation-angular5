@@ -1,0 +1,17 @@
+.success-wrapper {
+  color: rgb(85, 186, 163);
+  font-family: fantasy;
+  text-align: center;
+  padding-top: 40px;
+}
+.icon {
+  font-size: 230px;
+}
+.success {
+  margin-top: 50px;
+  font-size: 30px;
+}
+.id {
+  margin-top: 20px;
+  font-size: 20px;
+}

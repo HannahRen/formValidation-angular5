@@ -1,0 +1,12 @@
+.gender {
+  margin-top: 16px;
+}
+.male, .female {
+  margin-left: 10%;
+  padding: 7px;
+  border-radius: 5px;
+}
+.message-error-gender {
+  left: 55%;
+  top: 265px;
+}

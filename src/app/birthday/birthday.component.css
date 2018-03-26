@@ -1,0 +1,17 @@
+.birthday {
+  display: flex;
+  align-items: center;
+}
+.birthday label {
+  flex: 0 0 25%;
+}
+.birthday input {
+  flex: 0 0 75%;
+}
+.error-icon-birthday {
+  top: 132px;
+  right: 3%;
+}
+.message-error-birthday {
+  left: 25%;
+}

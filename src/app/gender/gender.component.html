@@ -1,0 +1,20 @@
+<form [formGroup]="formModel">
+  <div class="gender" (mouseover)="errorMessage=false" (mouseleave)="errorMessage=true">
+    Gender:
+    <!-- when error is invalid, error borders will show-->
+    <span class="male" [class.invalid]="!formModel.get('gender').valid && formModel.get('gender').touched">
+      <input type="radio" value="male" formControlName="gender" id="radio">
+      <label for="radio"> Male<span class="icon-man"></span></label>
+    </span>
+    <span class="female" [class.invalid]="!formModel.get('gender').valid && formModel.get('gender').touched">
+      <input type="radio" value="female" formControlName="gender" id="radio1">
+      <label for="radio1"> Female<span class="icon-woman"></span></label>
+    </span>
+  </div>
+</form>
+<!-- When mouse is over gender icon, the related error message will show -->
+<div class="message-error message-error-gender" [hidden]="errorMessage || formModel.get('gender').valid
+                                          || formModel.get('gender').untouched">
+  <div class="triangle"></div>
+  What's your gender?
+</div>

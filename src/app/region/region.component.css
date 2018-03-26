@@ -1,0 +1,17 @@
+.region {
+  display: flex;
+  align-items: center;
+}
+.region label {
+  flex: 0 0 25%;
+}
+.region select {
+  flex: 0 0 75%;
+}
+.error-icon-region {
+  top: 180px;
+  right: 6%;
+}
+.message-error-region {
+  left: 25%;
+}

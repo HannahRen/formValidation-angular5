@@ -1,0 +1,15 @@
+.fullname {
+  display: inline-block;
+  width: 49%;
+}
+.error-icon-firstname {
+  top: 36px;
+  left: 42%;
+}
+.error-icon-lastname {
+  top: 36px;
+  right: 3%;
+}
+.message-error-lastname {
+  left: 51%;
+}

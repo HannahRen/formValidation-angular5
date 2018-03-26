@@ -1,0 +1,50 @@
+<!-- First Name -->
+<form [formGroup]="formModel">
+  <div class="fullname">
+    <input type="text" placeholder="First Name" formControlName="firstName"
+           [class.invalid]="!formModel.get('firstName').valid && formModel.get('firstName').touched"
+           (focus)="fErrorIconHide=true"
+           (focusout)="fErrorIconHide=false"/>
+    <!-- when first name is invalid and input is not focused, error icon shows.
+    When mouse is over error icon, the related error message will show -->
+    <div [hidden]="formModel.get('firstName').valid || formModel.get('firstName').untouched || fErrorIconHide">
+      <span class="icon-notification error-icon error-icon-firstname"
+            (mouseover)="showErrorMessage(true, formModel.hasError('required', 'firstName'), formModel.hasError('mismatch', 'firstName'))"
+            (mouseleave)="hideErrorMessage()"></span>
+    </div>
+  </div>
+
+<!-- Last Name -->
+  <div class="fullname">
+    <input type="text" placeholder="Last Name" formControlName="lastName"
+           [class.invalid]="!formModel.get('lastName').valid && formModel.get('lastName').touched"
+           (focus)="lErrorIconHide=true"
+           (focusout)="lErrorIconHide=false"/>
+   <!-- when first name is invalid and input is not focused, error icon shows.
+   When mouse is over error icon, the related error message will show -->
+    <div [hidden]="formModel.get('lastName').valid || formModel.get('lastName').untouched || lErrorIconHide">
+      <span class="icon-notification error-icon error-icon-lastname"
+            (mouseover)="showErrorMessage(false, formModel.hasError('required', 'lastName'), formModel.hasError('mismatch', 'lastName'))"
+            (mouseleave)="hideErrorMessage()"></span>
+    </div>
+  </div>
+</form>
+
+<!-- error Message -->
+<div class="message-error" [hidden]="fRequiredError">
+  <div class="triangle"></div>
+  What's your first name?
+</div>
+<div class="message-error message-error-lastname" [hidden]="lRequiredError">
+  <div class="triangle"></div>
+  What's your last name?
+</div>
+
+<div class="message-error" [hidden]="fMismatchError">
+  <div class="triangle"></div>
+  This first name has certain invalid characters.
+</div>
+<div class="message-error error-lastname" [hidden]="lMismatchError">
+  <div class="triangle"></div>
+  This last name has certain invalid characters.
+</div>
