@@ -18,6 +18,6 @@ export class SuccessComponent implements OnInit {
     // 3 seconds later, navigate back to signup page
     setTimeout(() => {
       this.router.navigate(['/signup']);
-    }, 10000);
+    }, 3000);
   }
 }
